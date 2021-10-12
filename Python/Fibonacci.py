@@ -1,21 +1,24 @@
+# Function for nth Fibonacci number
+def Fibonacci(n):
 
-n = int(input("How many terms? "))
-n1, n2 = 0, 1
-n = int(input("How many terms? "))                                  #Taking number from user
-n1, n2 = 0, 1                                                       #defining variables 
-c = 0
-if n <= 0:
-if n <= 0:                                                          #checking number is negative number or not
-   print("Please enter a positive integer")
-elif n == 1:
-elif n == 1:                                                        #checking number is equal to 1 or not
-   print("Fibonacci sequence upto",n,":")
-   print(n1)
-else:
-else:                                                               
-   print("Fibonacci sequence:")
-   while c < n:
-   while c < n:                                                     #while loop is used to done this program
-       print(n1)
-       nth = n1 + n2
-       n1 = n2
+	# Check if input is 0 then it will
+	# print incorrect input
+	if n < 0:
+		print("Incorrect input")
+
+	# Check if n is 0
+	# then it will return 0
+	elif n == 0:
+		return 0
+
+	# Check if n is 1,2
+	# it will return 1
+	elif n == 1 or n == 2:
+		return 1
+
+	else:
+		return Fibonacci(n-1) + Fibonacci(n-2)
+
+# Driver Program
+n=int(input('enter n'))
+print(Fibonacci(n))
